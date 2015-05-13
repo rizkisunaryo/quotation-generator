@@ -1,0 +1,140 @@
+* {
+	font-family: Arial;
+	font-size: 11px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.alignRight {
+	text-align:right;
+}
+
+.alignCenter {
+	text-align:center;
+}
+
+.top {
+	vertical-align: top;
+}
+
+ul {
+	margin:0; 
+	padding-left:15px;
+}
+
+.container-fluid {
+	margin-top: 30px;
+	width:90%; 
+	margin-left:5%;
+}
+
+#quotationNo {
+	background-color:blue; 
+	color:white; 
+	padding:3px; 
+	font-weight:bold;
+	display: inline;
+}
+
+#headerBlock {
+	border-top: solid 1px black;
+	border-bottom: solid 3px black;
+	padding: 10px;
+	padding-bottom: 20px;
+}
+
+#companyName {
+	font-weight: bold;
+	font-size: 2em;
+}
+
+#headerTable {
+	width:100%;
+}
+
+.headerAddress {
+	font-size: 0.75em;
+}
+
+#customerSection {
+	padding: 10px;
+}
+
+.customerValueCell {
+	padding-left: 10px;
+	font-weight: bold;
+}
+
+#itemsTable {
+	width: 100%;
+}
+
+#itemsTableHeader {
+	background-color: black;
+	color: white;
+	font-weight: bold;
+}
+
+.itemsTableHeaderCell {
+	padding: 10px 0;
+}
+
+.itemsTableCellPadding {
+	padding: 0 5px;
+}
+
+.cellBorderLeft {
+	border-left: solid 1px black;
+}
+
+.cellBorder {
+	border-right: solid 1px black;
+}
+
+.cellBorderLast {
+	border-bottom: solid 1px black;
+}
+
+.cellValue {
+	padding-left: 5px;
+}
+
+.totalPriceLabel {
+	font-style: italic;
+	text-align: right;
+	padding-right: 10px;	
+}
+
+.totalPriceValue {
+	font-weight: bold;
+	text-align: right;
+	padding-right: 10px;	
+}
+
+.gstNumber {
+	border-bottom: solid 2px black;
+}
+
+.totalPriceNumber {
+	border-bottom: double 2px black;
+}
+
+#confirmOrder {
+	margin-bottom: 10px;
+}
+
+#signature {
+	margin-top: 20px;
+}
+
+#signatureTable {
+	width: 100%;
+}
+
+.signBox {
+	padding-bottom: 50px;
+	width: 150px;
+	border-bottom: double 1px black;
+}
