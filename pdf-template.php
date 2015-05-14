@@ -2,8 +2,15 @@
 require_once 'mysqlCon.php';
 require_once 'util.php';
 
-$custName = $_GET['name'];
+$custName = $_GET['firstName']." ".$_GET['lastName'];
+$address = $_GET['address'];
+$city = $_GET['city'];
+$postal = $_GET['postal'];
+$country = $_GET['country'];
+$phone = $_GET['phone'];
+$businessEmail = $_GET['businessEmail'];
 $email = $_GET['email'];
+
 $totalNetPrice = 0;
 ?>
 
@@ -53,8 +60,16 @@ $totalNetPrice = 0;
 					<td class="customerValueCell"><?php echo $custName; ?></td>
 				</tr>
 				<tr>
+					<td class="alignRight top">Address:</td>
+					<td class="customerValueCell"><?php echo $address.', '.$city.'<br />'.$postal.'<br />'.$country; ?></td>
+				</tr>
+				<tr>
+					<td class="alignRight">Phone:</td>
+					<td class="customerValueCell"><?php echo $phone; ?></td>
+				</tr>
+				<tr>
 					<td class="alignRight">Email:</td>
-					<td class="customerValueCell"><?php echo $email; ?></td>
+					<td class="customerValueCell"><?php echo $businessEmail; ?></td>
 				</tr>
 			</table>
 		</div>

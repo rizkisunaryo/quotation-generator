@@ -1,5 +1,16 @@
 <?php
 require_once 'PHPMailer/PHPMailerAutoload.php';
+require_once 'mysqlCon.php';
+
+$firstName = $_GET['firstName'];
+$lastName = $_GET['lastName'];
+$address = $_GET['address'];
+$city = $_GET['city'];
+$postal = $_GET['postal'];
+$country = $_GET['country'];
+$phone = $_GET['phone'];
+$businessEmail = $_GET['businessEmail'];
+$vEmail = $_GET['email'];
 
 $uriParts = explode("?", $_SERVER['REQUEST_URI']);
 $uriPartsCount = count($uriParts);
@@ -20,10 +31,17 @@ $email->From      = 'rizkisunaryo@ipserverone.com';
 $email->FromName  = 'IP SERVER ONE';
 $email->Subject   = 'Quotation';
 $email->Body      = 'Loren ipsum';
-$email->AddAddress( $_GET['email'] );
+if ($businessEmail!='' && !is_null($businessEmail)) $email->AddAddress( $businessEmail );
+if ($vEmail!=$businessEmail) $email->AddAddress( $vEmail );
 $file_to_attach = 'quotation'.$time.'.pdf';
 $email->AddAttachment( $file_to_attach , 'quotation.pdf' );
 $email->Send();
+
+
+$sql = "INSERT INTO tx_customer(firstName,lastName,address,city,postal,country,phone,businessEmail,email) 
+				VALUES ('".$firstName."','".$lastName."','".$address."','".$city."','".$postal."','".$country."','".$phone."','".$businessEmail."','".$vEmail."')";
+mysqli_query($conn,$sql);
+
 
 $urlPrefix = 'http://asamahe.com/portfolio/ipserverone/';
 header('Location: '.$urlPrefix);
